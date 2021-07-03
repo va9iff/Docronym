@@ -1,10 +1,30 @@
-//
-//
-//
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+  /* font-weight: 100; */
+}
+
 :root {
-  //   --see: #fff0;
+  --see: #fff0;
   --accenthue: 150;
-  //   --see: hsla(275, 0%, 25%, 0.267);
+  // --accenthue: 305;
+  // dark mode
+  // filter: invert(100%) hue-rotate(180deg);
+}
+
+#main {
+  padding-right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--see);
+  // background-color: crimson;
+}
+
+body {
+  background-color: #ededed;
+  // background-color: #fff;
 }
 
 @keyframes docstart {
@@ -37,17 +57,16 @@
   /* animation-name: docstart; */
   /* animation-duration: 1 s; */
 }
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+#starterS {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  align-content: center;
+  display: flex;
+  justify-content: center;
 }
-
-/* div { */
-/* padding: 7px; */
-/* margin: 7px; */
-/* } */
 
 /* HEADER */
 #header {
@@ -64,57 +83,6 @@
   letter-spacing: 0.5rem;
   transition: 200ms;
 }
-#leftHeader {
-  transform: translateX(1rem);
-  text-shadow: -6px 0 14px hsla(var(--accenthue), 100%, 70%, 0);
-
-  transition: 200ms;
-  height: 41px;
-  align-self: center;
-  background-color: var(--see);
-}
-/* RIGHT HEADER */
-
-#rightHeader {
-  margin-left: auto;
-  background-color: var(--see);
-}
-#rightHeader :hover {
-  transition: 400ms;
-  /* background-color: darkslateblue; */
-  /* color: crimson; */
-}
-
-#header #rightHeader a {
-  margin-right: 50px;
-  display: inline-block;
-  transition: 400ms;
-  font-size: 2.5rem;
-  color: hsla(var(--accenthue), 70%, 30%, 70%);
-  text-decoration: none;
-}
-#main #header #rightHeader a:hover {
-  color: hsla(var(--accenthue), 100%, 50%, 100%);
-  transform: translateX(-6px);
-}
-
-/* DLIST */
-#Dlist {
-  /* height: 100%; */
-  overflow: scroll;
-  /*  */
-  /*  */
-  width: 300px;
-  display: flex;
-  border-radius: 20px;
-  padding: 20px 1px;
-  flex-direction: column;
-  background-color: var(--see);
-  /* background-color: #eee; */
-  /*  */
-  /*  */
-  list-style-type: none;
-}
 #leftHeader :hover {
   transform: translateX(-1rem);
 
@@ -130,10 +98,69 @@
   padding-left: 3rem;
   padding-right: 3rem;
 }
-// #Dlist button:focus {
-//   transition: 900ms;
-//   box-shadow: inset 0 0 15px hsl(var(--accenthue), 30%, 50%);
-// }
+#leftHeader {
+  transform: translateX(1rem);
+  text-shadow: -6px 0 14px hsla(var(--accenthue), 100%, 70%, 0);
+
+  transition: 200ms;
+  height: 41px;
+  align-self: center;
+  background-color: var(--see);
+}
+#logoText {
+  color: hsla(var(--accenthue), 100%, 50%, 100%);
+}
+
+/* RIGHT HEADER */
+#rightHeader {
+  margin-left: auto;
+  background-color: var(--see);
+}
+#rightHeader :hover {
+  transition: 400ms;
+  /* background-color: darkslateblue; */
+  /* color: crimson; */
+}
+
+/* HEADER LINKS */
+#header #rightHeader a {
+  margin-right: 50px;
+  display: inline-block;
+  transition: 400ms;
+  font-size: 2.5rem;
+  color: hsla(var(--accenthue), 70%, 30%, 70%);
+  text-decoration: none;
+}
+#header #rightHeader a:hover {
+  color: hsla(var(--accenthue), 100%, 50%, 100%);
+  transform: translateX(-6px);
+}
+
+/* DLIST */
+#Dlist {
+  /* height: 100%; */
+  // overflow: scroll;
+  overflow: hidden;
+  width: 300px;
+  display: flex;
+  border-radius: 20px;
+  padding: 20px 1px;
+  flex-direction: column;
+  background-color: var(--see);
+  // background-color: #ddd;
+  list-style-type: none;
+}
+
+#Dlist:hover {
+  //   overflow: hidden;
+  overflow: scroll;
+  button {
+    // background-color: hsl(var(--accenthue), 100%, 70%);
+    transition: 750ms;
+    // background-color: #eee7;
+  }
+}
+
 #Dlist button {
   text-align: start;
   background-color: #eee0;
@@ -153,36 +180,32 @@
   /* border-width: 1px; */
 }
 
-#content {
-  overflow: scroll;
-  padding: 14px;
-  border-radius: 12px;
-  /* border: 2px solid hsl(152, 20%, 40%); */
-  margin: 14px;
-  margin-top: 0;
-  margin-bottom: 44px;
-  background-color: var(--see);
-  flex: 1;
+#Dlist button:hover {
+  background-color: hsla(var(--accenthue), 100%, 75%, 50%);
+  transition: 200ms;
+}
+#Dlist button:focus {
+  transition: 200ms;
+  // background-color: hsla(var(--accenthue), 100%, 50%, 100%);
+  // border: 2px solid hsla(var(--accenthue), 100%, 50%, 100%);
+  // padding: 40px;
+  // text-shadow: 3px 3px 3px #0006;
 }
 
-/* GENERAL */
-* {
-  font-family: roboto;
-  /* font-weight: 100; */
-}
-
-h1 {
-  color: hsla(var(--accenthue), 100%, 50%, 100%);
-}
-
+// PARTS
 #midpart {
   margin: 10px;
   margin-top: 0;
   background-color: var(--see);
+  // background-color: yellow;
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   align-items: stretch;
+  margin-right: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 #botpart {
@@ -191,33 +214,32 @@ h1 {
   position: absolute;
   display: flex;
   background-color: var(--see);
+  background-color: rgba(71, 61, 139, 0.58);
   height: 40px;
   padding: 5px;
   bottom: 0px;
   right: 0;
   width: 100%;
 }
-#credits {
-  /* position: relative; */
-  display: flex;
-  background-color: var(--see);
-  margin-left: auto;
-}
 
-#credits p {
-  align-self: center;
-}
-#credits img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  align-self: center;
-}
-
-#main {
-  width: 100vw;
-  height: 100vh;
+// CONTENT
+#content {
+  overflow: scroll;
+  padding: 14px;
+  padding-left: 1rem;
+  border-radius: 12px;
+  /* border: 2px solid hsl(152, 20%, 40%); */
+  margin: 14px;
+  margin-top: 0;
+  // margin-bottom: 44px;
+  margin-bottom: 0;
+  padding-bottom: 0;
   background-color: var(--see);
+  // background-color: cyan;
+  flex: 1;
+  padding-right: 77px;
+  margin-right: 0px;
+  // margin-right: 7px;
 }
 
 /* width */
@@ -254,17 +276,4 @@ h1 {
 ::selection {
   color: white;
   background: hsla(var(--accenthue), 100%, 50%, 100%);
-}
-
-#Dlist:hover {
-  //   overflow: hidden;
-  button {
-    // background-color: hsl(var(--accenthue), 100%, 70%);
-    transition: 750ms;
-    // background-color: #eee7;
-  }
-}
-#Dlist button:hover {
-  background-color: hsl(var(--accenthue), 100%, 75%);
-  transition: 200ms;
 }
