@@ -1,27 +1,40 @@
+// inject the content to this
 content = document.querySelector("#content");
+// post names listed here
 Dlist = document.querySelector("#Dlist");
 
+// The path to the posts
+// var pathToPosts = "/Dposts"; //is getting from html script tag
+
+// the accent color of the page
+// var hue = 150
+document.documentElement.style.setProperty("--accenthue", hue);
+
+// get all the post names as list and do smthng with them
 $.getJSON(
-  document.URL.substr(0, document.URL.lastIndexOf("/")) + "/Dposts",
-  (data) => {
-    // console.log(data); //["doc1.jpg", "doc2.jpg", "doc3.jpg"]
-    var allPosts = data;
-    console.log(allPosts.length);
-    for (let index = 0; index < allPosts.length; index++) {
-      let P = allPosts[index];
-      console.log("asfjd");
+  // the path to the folder which the posts are in
+  document.URL.substr(0, document.URL.lastIndexOf("/")) + pathToPosts,
+  // the path names are given as paremeter allPostNames (as list) to this function
+  (allPostNames) => {
+    // for every post name
+    allPostNames.forEach((P) => {
+      // make a button for this
       element = document.createElement("button");
+      // button's text is post's name
       element.innerHTML = P;
+      // when the button is clicked
       element.addEventListener("click", (e) => {
-        // content.innerHTML = element.innerHTML + "VVVVVVVVVVVV";
-        fetch("./Dposts/" + P).then((r) => {
+        // get the file in the posts folder by its name
+        fetch(`${pathToPosts}/` + P).then((r) => {
+          // convert it to the text
           r.text().then((d) => {
-            // let CONTENT = d;
+            // and inject it to the content element
             content.innerHTML = d;
           });
         });
       });
+      // add the button to the list
       Dlist.appendChild(element);
-    }
+    });
   }
 );

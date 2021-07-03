@@ -8,7 +8,6 @@
 }
 
 :root {
-  --see: #fff0;
   --accenthue: 150;
 }
 
@@ -16,11 +15,7 @@
   padding-right: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--see);
-}
-
-body {
-  background-color: #ededed;
+  background-color: #fff;
 }
 
 @-webkit-keyframes docstart {
@@ -59,6 +54,7 @@ body {
 
 #docstartici {
   visibility: hidden;
+  margin-top: 70vh;
   letter-spacing: 1.5rem;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
@@ -97,7 +93,6 @@ body {
 /* HEADER */
 #header {
   padding: 4px;
-  background-color: var(--see);
   height: 70px;
   /* box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.144); */
   display: -webkit-box;
@@ -143,7 +138,6 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  background-color: var(--see);
 }
 
 #logoText {
@@ -153,7 +147,6 @@ body {
 /* RIGHT HEADER */
 #rightHeader {
   margin-left: auto;
-  background-color: var(--see);
 }
 
 #rightHeader :hover {
@@ -194,17 +187,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: var(--see);
   list-style-type: none;
 }
 
 #Dlist:hover {
   overflow: scroll;
-}
-
-#Dlist:hover button {
-  -webkit-transition: 750ms;
-  transition: 750ms;
 }
 
 #Dlist button {
@@ -233,15 +220,9 @@ body {
   transition: 200ms;
 }
 
-#Dlist button:focus {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
 #midpart {
   margin: 10px;
   margin-top: 0;
-  background-color: var(--see);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -259,38 +240,22 @@ body {
   margin-bottom: 0;
 }
 
-#botpart {
-  /* opacity: 80%; */
-  font-weight: 100;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: var(--see);
-  background-color: rgba(71, 61, 139, 0.58);
-  height: 40px;
-  padding: 5px;
-  bottom: 0px;
-  right: 0;
-  width: 100%;
-}
-
 #content {
   overflow: scroll;
   padding: 14px;
   padding-left: 1rem;
+  padding-right: 77px;
+  padding-bottom: 70vh;
   border-radius: 12px;
   /* border: 2px solid hsl(152, 20%, 40%); */
   margin: 14px;
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 0;
-  background-color: var(--see);
+  margin-right: 0;
+  margin-left: 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding-right: 77px;
-  margin-right: 0px;
 }
 
 /* width */
@@ -315,8 +280,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   /* background: #555; */
   background: hsla(var(--accenthue), 100%, 50%, 100%);
-  -webkit-transition: 200ms;
-  transition: 200ms;
 }
 
 ::-moz-selection {
