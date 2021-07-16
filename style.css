@@ -54,7 +54,6 @@
 
 #docstartici {
   visibility: hidden;
-  margin-top: 70vh;
   letter-spacing: 1.5rem;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
@@ -241,7 +240,14 @@
   margin-bottom: 0;
 }
 
-#content {
+#contentHeader {
+  background-color: hsla(var(--accenthue), 100%, 50%, 10%);
+  padding: 1.7rem;
+  padding-left: 3.4rem;
+  border-radius: 4px;
+}
+
+#contentWrapper {
   color: #141414;
   overflow: scroll;
   padding: 14px;

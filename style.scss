@@ -37,7 +37,7 @@
 
 #docstartici {
   visibility: hidden;
-  margin-top: 70vh; //for content's padding bottom
+  // margin-top: 70vh; //for content's padding bottom
   letter-spacing: 1.5rem;
   animation-iteration-count: infinite;
   color: hsla(var(--accenthue), 100%, 50%, 100%);
@@ -211,8 +211,22 @@
 //   width: 100%;
 // }
 
+// Content Header
+#contentHeader {
+  // color: hsl(var(--accenthue), 100%, 70%);
+  background-color: hsla(var(--accenthue), 100%, 50%, 10%);
+  // background-color: hsla(var(--accenthue), 100%, 20%, 20%);
+  // text-align: center;
+  padding: 1.7rem;
+  padding-left: 3.4rem;
+  // border-radius: 1.3rem;
+  border-radius: 4px;
+  // font-weight: 100;
+  // letter-spacing: 0.2rem;
+}
+
 // CONTENT
-#content {
+#contentWrapper {
   color: rgb(20, 20, 20);
   overflow: scroll;
   padding: 14px;

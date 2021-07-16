@@ -1,5 +1,6 @@
 // inject the content to this
 content = document.querySelector("#content");
+contentHeader = document.querySelector("#contentHeader");
 // post names listed here
 Dlist = document.querySelector("#Dlist");
 
@@ -25,6 +26,7 @@ $.getJSON(
       l = Pobjs.push({
         // that has nam, for its buttons name
         nam: P,
+        namNoEx: P.substr(0, P.length - 5),
         // a button that will be shown in left (Dlist)
         btn: document.createElement("button"),
         // and downloaded content for not downloading in every click, but once.
@@ -33,18 +35,22 @@ $.getJSON(
       // gets the last pushed post
       let current = Pobjs[l - 1];
       // button's text is post's name
-      current.btn.innerHTML = P;
+      current.btn.innerHTML = current.namNoEx;
       // when the button is clicked
       current.btn.addEventListener("click", (e) => {
         // get the file in the posts folder by its name
-        fetch(`${pathToPosts}/` + P).then((r) => {
-          // check if it has downloaded it
-          if (current.ctn) {
-            // if it has, then inject this
-            content.innerHTML = current.ctn;
-          }
-          // if not, fetch and set this as new downloaded content
-          else {
+        if (current.ctn) {
+          // setting the content's name the current showing post
+          contentHeader.innerHTML = current.namNoEx;
+          // if it has, then inject this
+          content.innerHTML = current.ctn;
+        }
+        // if not, fetch and set this as new downloaded content
+        else {
+          fetch(`${pathToPosts}/` + P).then((r) => {
+            // set name again. not doing before if cuz can some delay.
+            contentHeader.innerHTML = current.namNoEx;
+            // check if it has downloaded it
             // checking if it fetches only when it has to
             console.log("we needed to get this by fetching");
             // convert it to the text
@@ -54,10 +60,10 @@ $.getJSON(
               // now it has ctn and won't fetch for this post again.
               current.ctn = d;
             });
-          }
-          // just checking ctns
-          console.log(current);
-        });
+            // just checking ctns
+            console.log(current);
+          });
+        }
       });
       // add the button to the list
       Dlist.appendChild(current.btn);
