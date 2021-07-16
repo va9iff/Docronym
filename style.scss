@@ -100,6 +100,7 @@
   align-self: center;
 }
 #logoText {
+  margin: 0;
   color: hsla(var(--accenthue), 100%, 50%, 100%);
 }
 
@@ -212,6 +213,7 @@
 
 // CONTENT
 #content {
+  color: rgb(20, 20, 20);
   overflow: scroll;
   padding: 14px;
   padding-left: 1rem;
@@ -264,4 +266,342 @@
 ::selection {
   color: white;
   background: hsla(var(--accenthue), 100%, 50%, 100%);
+}
+
+//
+//
+//
+//
+// Style for content
+
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+  -webkit-print-color-adjust: exact;
+}
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+a,
+a.visited {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+  font-size: 80%;
+  color: #424242;
+}
+
+h1,
+h2,
+h3 {
+  color: rgb(50, 50, 50);
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 1.875rem;
+  margin-top: 1.875rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.source {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 1.5em;
+  word-break: break-all;
+}
+
+/* mark { */
+/* // !!!temp */
+/* background-color: yellow; */
+/* } */
+
+img {
+  max-width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(50, 50, 50, 0.09);
+  border-collapse: collapse;
+}
+
+table {
+  border-left: none;
+  border-right: none;
+}
+
+th,
+td {
+  font-weight: normal;
+  padding: 0.25em 0.5em;
+  line-height: 1.5;
+  min-height: 1.5em;
+  text-align: left;
+}
+
+th {
+  color: rgba(50, 50, 50, 0.6);
+}
+
+ol,
+ul {
+  margin: 0;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+  margin-block-start: 0.6em;
+}
+
+ul > li {
+  list-style: disc;
+}
+
+ul.to-do-list > li {
+  list-style: none;
+}
+
+.to-do-children-checked {
+  text-decoration: line-through;
+  opacity: 0.375;
+}
+
+ul.toggle > li {
+  list-style: none;
+}
+
+ul {
+  padding-inline-start: 1.7em;
+}
+
+ul > li {
+  padding-left: 0.1em;
+}
+
+ol {
+  padding-inline-start: 1.5em;
+}
+
+/* !!! opening and closing toggle. we will add some background to it */
+ol > li {
+  padding-left: 0.25em;
+}
+
+.mono ol {
+  padding-inline-start: 2em;
+}
+
+.mono ol > li {
+  text-indent: -0.4em;
+}
+
+.toggle {
+  padding-inline-start: 0em;
+  list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+  padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+  margin-left: -1.1em;
+}
+
+time {
+  opacity: 0.4;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.image {
+  border: none;
+  margin: 1.5em 0.1rem;
+  padding: 0;
+  /* border-radius: 0; */
+  border-radius: 8px;
+  text-align: center;
+}
+
+blockquote {
+  font-size: 1.25em;
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 3px solid rgb(50, 50, 50);
+}
+
+.highlight-gray {
+  color: hsl(0, 0%, 60%);
+}
+.highlight-brown {
+  color: hsl(18, 30%, 30%);
+}
+.highlight-orange {
+  color: hsl(32, 90%, 45%);
+}
+.highlight-yellow {
+  color: hsl(45, 100%, 45%);
+}
+.highlight-teal {
+  color: hsl(178, 77%, 28%);
+}
+.highlight-blue {
+  color: hsl(200, 80%, 35%);
+}
+.highlight-purple {
+  color: hsl(264, 42%, 45%);
+}
+.highlight-pink {
+  color: hsl(333, 77%, 45%);
+}
+.highlight-red {
+  color: hsl(0, 70%, 50%);
+}
+.highlight-gray_background {
+  background: hsl(0, 0%, 90%);
+}
+.highlight-brown_background {
+  background: hsl(20, 12%, 90%);
+}
+.highlight-orange_background {
+  background: hsl(29, 80%, 90%);
+}
+.highlight-yellow_background {
+  background: hsl(45, 80%, 90%);
+}
+.highlight-teal_background {
+  background: hsl(169, 25%, 90%);
+}
+.highlight-blue_background {
+  background: hsl(198, 35%, 90%);
+}
+.highlight-purple_background {
+  background: hsl(266, 35%, 90%);
+}
+.highlight-pink_background {
+  background: hsl(326, 55%, 90%);
+}
+.highlight-red_background {
+  background: hsl(0, 90%, 90%);
+}
+.block-color-gray {
+  color: rgba(50, 50, 50, 0.6);
+  fill: rgba(50, 50, 50, 0.6);
+}
+.block-color-brown {
+  color: hsl(18, 30%, 30%);
+  fill: hsl(18, 30%, 30%);
+}
+.block-color-orange {
+  color: hsl(32, 90%, 45%);
+  fill: hsl(32, 90%, 45%);
+}
+.block-color-yellow {
+  color: hsl(45, 100%, 45%);
+  fill: hsl(45, 100%, 45%);
+}
+.block-color-teal {
+  color: hsl(178, 77%, 28%);
+  fill: hsl(178, 77%, 28%);
+}
+.block-color-blue {
+  color: hsl(200, 80%, 35%);
+  fill: hsl(200, 80%, 35%);
+}
+.block-color-purple {
+  color: hsl(264, 42%, 45%);
+  fill: hsl(264, 42%, 45%);
+}
+.block-color-pink {
+  color: hsl(333, 77%, 45%);
+  fill: hsl(333, 77%, 45%);
+}
+.block-color-red {
+  color: hsl(0, 70%, 50%);
+  fill: hsl(0, 70%, 50%);
+}
+.block-color-gray_background {
+  background: rgb(235, 236, 237);
+}
+.block-color-brown_background {
+  background: rgb(233, 229, 227);
+}
+.block-color-orange_background {
+  background: rgb(250, 235, 221);
+}
+.block-color-yellow_background {
+  background: rgb(251, 243, 219);
+}
+.block-color-teal_background {
+  background: rgb(221, 237, 234);
+}
+.block-color-blue_background {
+  background: rgb(221, 235, 241);
+}
+.block-color-purple_background {
+  background: rgb(234, 228, 242);
+}
+.block-color-pink_background {
+  background: rgb(244, 223, 235);
+}
+.block-color-red_background {
+  background: rgb(251, 228, 228);
+}
+
+.checkbox {
+  display: inline-flex;
+  vertical-align: text-bottom;
+  width: 16;
+  height: 16;
+  background-size: 16px;
+  margin-left: 2px;
+  margin-right: 5px;
+}
+
+.checkbox-on {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
