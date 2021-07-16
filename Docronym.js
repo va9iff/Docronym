@@ -26,7 +26,7 @@ $.getJSON(
       l = Pobjs.push({
         // that has nam, for its buttons name
         nam: P,
-        namNoEx: P.substr(0, P.length - 5),
+        namNoEx: P.substr(0, P.lastIndexOf(".")),
         // a button that will be shown in left (Dlist)
         btn: document.createElement("button"),
         // and downloaded content for not downloading in every click, but once.
@@ -38,7 +38,7 @@ $.getJSON(
       current.btn.innerHTML = current.namNoEx;
       // when the button is clicked
       current.btn.addEventListener("click", (e) => {
-        // get the file in the posts folder by its name
+        // check if it has downloaded it
         if (current.ctn) {
           // setting the content's name the current showing post
           contentHeader.innerHTML = current.namNoEx;
@@ -47,10 +47,10 @@ $.getJSON(
         }
         // if not, fetch and set this as new downloaded content
         else {
+          // get the file in the posts folder by its name
           fetch(`${pathToPosts}/` + P).then((r) => {
             // set name again. not doing before if cuz can some delay.
             contentHeader.innerHTML = current.namNoEx;
-            // check if it has downloaded it
             // checking if it fetches only when it has to
             console.log("we needed to get this by fetching");
             // convert it to the text
