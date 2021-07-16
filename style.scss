@@ -48,6 +48,7 @@
   animation-name: docstart;
   animation-duration: 4s;
 
+  margin: 20% 0;
   /* animation-name: docstart; */
   /* animation-duration: 1 s; */
 }
@@ -242,21 +243,33 @@
   // margin-bottom: 44px;
   margin-bottom: 0;
   margin-right: 0;
-  margin-left: 0;
+  // margin-left: -1px; //!!!!SCROLL BAR DIDN'T REACHES THE LEFT END OF SCREEN
+  // never mind worked even if I commented this out.
   flex: 1;
   // margin-right: 7px;
 }
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  // background: rgba(255, 0, 0, 1);
+  // -webkit-box-shadow: inset 0 0 3px hsla(var(--accenthue), 100%, 50%, 100%);
+}
+
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 12px;
+  height: 12px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   /* background: #f1f1f1; */
-  background: #0000;
+  background: #8882;
+  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* Handle */
@@ -305,8 +318,9 @@ body {
 }
 
 #content {
+  padding-top: 1.2rem;
   line-height: 1.5;
-  white-space: pre-wrap;
+  // white-space: pre-wrap;
 }
 
 a,
